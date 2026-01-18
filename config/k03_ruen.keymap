@@ -19,17 +19,17 @@
 
         cmben {
             bindings = <&layer_en>;
-            key-positions = <49 57>;
+            key-positions = <16 15>;
             layers = <1>;
         };
 
         cmbru {
             bindings = <&layer_ru>;
-            key-positions = <36 52>;
+            key-positions = <15 16>;
             layers = <0>;
         };
 
-        sdsds {
+        caps_word_combo {
             bindings = <&caps_word>;
             key-positions = <36 49>;
         };
