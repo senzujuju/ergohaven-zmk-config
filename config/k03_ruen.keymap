@@ -128,7 +128,7 @@
         vscode_gitlab: vscode_gitlab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LA(J))>;
+            bindings = <&kp LS(LG(J))>;
             label = "VSCODE_GITLAB";
         };
     };
