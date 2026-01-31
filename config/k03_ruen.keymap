@@ -110,6 +110,20 @@
             bindings = <&kp LS(LG(F))>;
             label = "VSCODE_SEARCH";
         };
+
+        NON_US_grave_accent: NON_US_grave_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&en NON_US_BACKSLASH>;
+            label = "NON_US_GRAVE_ACCENT";
+        };
+
+        NON_US_tilde: NON_US_tilde {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&en LS(NON_US_BACKSLASH)>;
+            label = "NON_US_TILDE";
+        };
     };
 
     keymap {
@@ -167,11 +181,11 @@
 
         sym_en {
             bindings = <
-&trans  &trans     &kp AT    &kp DLLR   &kp HASH  &kp NON_US_BACKSLASH                    &trans     &trans    &kp CARET  &trans    &trans    &trans
-&trans  &trans     &kp LT    &kp EQUAL  &kp GT    &kp NON_US_BACKSLASH                    &kp APOS   &kp LBKT  &kp UNDER  &kp RBKT  &trans    &trans
-&trans  &kp BSLH   &kp LPAR  &kp MINUS  &kp RPAR  &kp PLUS                                &kp PRCNT  &kp LBRC  &kp SEMI   &kp RBRC  &kp EXCL  &kp QUESTION
-&trans  &kp COMMA  &kp STAR  &kp COLON  &kp FSLH  &kp DOLLAR            &trans    &trans  &trans     &kp PIPE  &kp TILDE  &kp AMPS  &kp DOT   &trans
-                   &trans    &trans     &trans    &mo 5                 &trans    &trans  &trans     &trans    &trans     &trans
+&trans  &trans     &kp AT    &kp DLLR   &kp HASH  &trans                                  &trans     &trans    &kp CARET                 &trans    &trans    &trans
+&trans  &trans     &kp LT    &kp EQUAL  &kp GT    &kp NON_US_BACKSLASH                    &kp APOS   &kp LBKT  &kp UNDER                 &kp RBKT  &trans    &trans
+&trans  &kp BSLH   &kp LPAR  &kp MINUS  &kp RPAR  &kp PLUS                                &kp PRCNT  &kp LBRC  &kp SEMI                  &kp RBRC  &kp EXCL  &kp QUESTION
+&trans  &kp COMMA  &kp STAR  &kp COLON  &kp FSLH  &kp DOLLAR            &trans    &trans  &trans     &kp PIPE  &kp LS(NON_US_BACKSLASH)  &kp AMPS  &kp DOT   &trans
+                   &trans    &trans     &trans    &mo 5                 &trans    &trans  &trans     &trans    &trans                    &trans
             >;
 
             display-name = "Symbols";
@@ -180,11 +194,11 @@
         sym_ru {
             display-name = "Symbols";
             bindings = <
-&trans  &trans        &en AT        &en DLLR      &en HASH     &kp NON_US_BACKSLASH                    &trans          &trans    &en CARET    &trans    &trans      &trans
-&trans  &trans        &en LT        &kp EQUAL     &en GT       &en NON_US_BACKSLASH                    &en APOS        &en LBKT  &kp UNDER    &en RBKT  &trans      &trans
-&trans  &kp RU_BSLH   &kp LPAR      &kp MINUS     &kp RPAR     &kp PLUS                                &kp RU_PERCENT  &en LBRC  &kp RU_SEMI  &en RBRC  &kp EXCL    &kp RU_QUESTION
-&trans  &kp RU_COMMA  &kp RU_ASTRK  &kp RU_COLON  &kp RU_FSLH  &en DOLLAR            &trans    &trans  &trans          &en PIPE  &en TILDE    &en AMPS  &kp RU_DOT  &trans
-                      &trans        &trans        &trans       &mo 5                 &trans    &trans  &trans          &trans    &trans       &trans
+&trans  &trans        &en AT        &en DLLR      &en HASH     &trans                                  &trans          &trans    &en CARET      &trans    &trans      &trans
+&trans  &trans        &en LT        &kp EQUAL     &en GT       &NON_US_grave_accent                    &en APOS        &en LBKT  &kp UNDER      &en RBKT  &trans      &trans
+&trans  &kp RU_BSLH   &kp LPAR      &kp MINUS     &kp RPAR     &kp PLUS                                &kp RU_PERCENT  &en LBRC  &kp RU_SEMI    &en RBRC  &kp EXCL    &kp RU_QUESTION
+&trans  &kp RU_COMMA  &kp RU_ASTRK  &kp RU_COLON  &kp RU_FSLH  &en DOLLAR            &trans    &trans  &trans          &en PIPE  &NON_US_tilde  &en AMPS  &kp RU_DOT  &trans
+                      &trans        &trans        &trans       &mo 5                 &trans    &trans  &trans          &trans    &trans         &trans
             >;
         };
 
